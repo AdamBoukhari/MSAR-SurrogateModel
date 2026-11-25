@@ -70,9 +70,8 @@ MSAR-SurrogateModel/
 │   ├── colorbar.py                  # Standalone colorbar plotting utility
 │   └── TrajectoryVisualization.py   # Drift particle trajectory (filament) visualization script
 │
-├── dataset/                         # Pre-generated drift and strategy I/O datasets (.npz)
+├── dataset/                         # Ignored by Git; hosted separately on Hugging Face (.npz)
 │   ├── DriftReduced/                # North America particle drift trajectories via OpenDrift (train / validation)
-│   ├── InputOutput/                 # Initial SRU configurations and ground-truth POS targets (train / validation)
 │   └── InputOutputAugmented/        # Augmented SRU input/output datasets used for training (train / validation)
 │
 ├── output/                          # Saved checkpoints and training diagnostic figures
@@ -107,9 +106,10 @@ MSAR-SurrogateModel/
 - **`Controller/`, `Repository/`, `Utilities/` — Simulator Bridge**
   - Provide the Python domain classes (`Object`, `Particle`, `SearchZone`, `Position`, `FunctionRepository`, `SimulatorType`) required by `SimulatorLoader` to construct scenarios and query the compiled CUDA `Simulator` extension during ground-truth evaluations.
 
-- **`dataset/` — Drift & Strategy Datasets**
-  - **`DriftReduced/`**: Particle drift trajectories generated in **North America** using [OpenDrift](https://opendrift.github.io/) ([GitHub](https://github.com/opendrift/opendrift)), reduced to 500 particles per scenario (`train` / `validation`).
-  - **`InputOutput/` & `InputOutputAugmented/`**: Ground-truth SRU configurations and simulator POS targets generated for the corresponding drift scenarios (`InputOutputAugmented/` is used for training).
+- **`dataset/` — Drift & Strategy Datasets (Hosted on Hugging Face)**
+  - Because of the large total size of the `.npz` archives, `dataset/` is excluded from Git (`.gitignore`) and hosted separately on **[Hugging Face](https://huggingface.co/datasets/AdamBoukhari/MSAR-Surrogate-Dataset)**.
+  - **`DriftReduced/`**: Particle drift trajectories generated in **North America** using [OpenDrift](https://opendrift.github.io/) ([GitHub](https://github.com/opendrift/opendrift)), reduced to 500 particles per scenario (`train`: 5,000 / `validation`: 101).
+  - **`InputOutputAugmented/`**: Ground-truth SRU configurations and simulator POS targets generated for the corresponding drift scenarios and used for training (`train`: 5,000 / `validation`: 101).
 
 ---
 
@@ -168,6 +168,19 @@ pip install torch numpy scipy matplotlib tqdm sobol_seq cma nevergrad optuna geo
 ```
 
 *(Ensure you install the CUDA-enabled wheel of PyTorch matching your CUDA toolkit version from [pytorch.org](https://pytorch.org/get-started/locally/).)*
+
+### 4. Download the Dataset (Required for Training & Evaluation)
+
+The pre-generated `.npz` datasets (`DriftReduced/` and `InputOutputAugmented/`) are hosted separately on Hugging Face to keep this Git repository lightweight:
+
+- **Hugging Face Dataset:** [AdamBoukhari/MSAR-Surrogate-Dataset](https://huggingface.co/datasets/AdamBoukhari/MSAR-Surrogate-Dataset)
+
+Download the dataset directly into `dataset/` from the repository root:
+
+```bash
+pip install -U huggingface_hub
+hf download AdamBoukhari/MSAR-Surrogate-Dataset --repo-type dataset --local-dir dataset
+```
 
 ---
 
