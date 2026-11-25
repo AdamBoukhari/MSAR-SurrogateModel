@@ -26,3 +26,5 @@ exp_*/
 # OS files
 .DS_Store
 Thumbs.db
+
+dataset/
