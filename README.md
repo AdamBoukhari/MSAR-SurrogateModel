@@ -7,9 +7,9 @@
 
 **MSAR Surrogate Model** is an experimental deep learning metamodel designed to approximate the **Probability of Success (POS)** computed by the GPU-accelerated **Maritime Search and Rescue (MSAR) Search Simulator**.
 
-**WE ARE NOT RELEASING THIS CODE FOR AN OPERATIONAL SYSTEM INTENDED FOR SEARCH AND RESCUE**
-
 By encoding drifting particle clouds with a **PointNet + Temporal Transformer** architecture and querying them with Search and Rescue Unit (SRU) configurations via **Cross-Attention**, the surrogate model enables near-instantaneous POS evaluation for large batches of candidate search strategies and downstream black-box optimization.
+
+**WE ARE NOT RELEASING THIS CODE FOR AN OPERATIONAL SYSTEM INTENDED FOR SEARCH AND RESCUE AS IT IS AN EXPERIMENTAL MODEL**
 
 ---
 
