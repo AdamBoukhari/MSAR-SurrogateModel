@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the following research paper."
+type: software
+title: "MSAR Surrogate Model"
+authors:
+  - family-names: Boukhari
+    given-names: Adam
+  - family-names: Morin
+    given-names: Michael
+license: MIT
+abstract: >-
+  In maritime search and rescue (MSAR), optimizing search plans under strict time constraints is critical to increase the probability of success (POS). However, traditional simulation-based optimization methods are computationally expensive, limiting their applicability in real-time decision-making. In this paper, we propose a spatiotemporal metamodel as a surrogate for the search simulation process, enabling an efficient approximation of the POS of MSAR search plans. We further investigate its use within a stochastic local search framework, where the metamodel enables the exploration of large batches of candidate solutions while the simulator ensures accurate evaluation. Results show that this approach improves solution quality in terms of wall-clock time compared to simulation and optimization alone. These results highlight the potential of metamodel-guided optimization for time-critical MSAR applications.
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Boukhari
+      given-names: Adam
+    - family-names: Morin
+      given-names: Michael
+  title: "Neural Spatiotemporal Metamodel of Search Simulations for Maritime Search and Rescue Planning"
+  collection-title: "Proceedings of the 2026 Winter Simulation Conference (WSC)"
+  collection-type: proceedings
+  publisher:
+    name: "IEEE"
+  year: 2026
+  status: in-press
+  url: "https://www.michaelmorin.info/publications/ab2026wsc.pdf"
+references:
+  - type: article
+    authors:
+      - family-names: Boukhari
+        given-names: Adam
+      - family-names: Morin
+        given-names: Michael
+    title: "Multi-Threading and GPU Acceleration: The Case for Faster Simulators for Maritime Search and Rescue Operations Planning"
+    journal: "Proceedings of the International ISCRAM Conference"
+    volume: 23
+    year: 2026
+    month: 5
+    doi: "10.59297/nbqew095"
+    url: "https://ojs.iscram.org/index.php/Proceedings/article/view/291"
+  - type: software
+    authors:
+      - family-names: Boukhari
+        given-names: Adam
+      - family-names: Morin
+        given-names: Michael
+    title: "MSAR Search Simulator"
+    repository-code: "https://github.com/AdamBoukhari/MSAR-Search-Simulator"

@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Experiment generated outputs
+Experiments/NOWARM_*/
+Experiments/PREWARM_*/
+Experiments/results_*/
+Experiments/exp_*/
+NOWARM_*/
+PREWARM_*/
+results_*/
+exp_*/
+
+# IDE / Editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
